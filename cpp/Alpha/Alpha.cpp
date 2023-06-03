@@ -1,31 +1,40 @@
-// Program 3.13 Write a program to calculate roots of a quadratic equation.
+// Program 3.13 Write coefficient_a program to calculate roots of coefficient_a quadratic equation.
 #include<iostream>
 #include<cmath>
+
 using namespace std;
+
 int main()
 {
-	int a, b, c;
-	float D, deno, root1, root2;
-	cout << "\n Enter the values of a, b, c : ";
-	cin >> a >> b >> c;
-	D = (b * b) - (4 * a * c);
-	deno = 2 * a;
-	if (D > 0)
+	float coefficient_a, coefficient_b, coefficient_c, realpart, imaginarypart;
+	float Discriminant, denominator, root1, root2;
+
+	cout << "\n Enter the values of coefficient_a, coefficient_b, coefficient_c : " << endl;
+	cin >> coefficient_a >> coefficient_b >> coefficient_c;
+	
+	Discriminant = pow(coefficient_b, 2) - (4 * coefficient_a * coefficient_c);
+	denominator = 2 * coefficient_a;
+	
+	if (Discriminant > 0)
 	{
-		cout << "\n REAL ROOTS";
-		root1 = (-b + sqrt(D)) / deno;
-		root2 = (-b - sqrt(D)) / deno;
-		cout << "\n ROOT1 = " << root1 << "\t ROOT2 = " << root2;
+		cout << "REAL ROOTS"<<endl;
+		root1 = (-coefficient_b + sqrt(Discriminant)) / denominator;
+		root2 = (-coefficient_b - sqrt(Discriminant)) / denominator;
+		cout << "\n ROOT1 = " << root1 << "\t ROOT2 = " << root2 << endl;
 	}
-	else if (D == 0)
+
+	else if (Discriminant == 0)
 	{
-		cout << "\n EQUAL ROOTS";
-		root1 = -b / deno;
-		cout << "\n ROOT1 = " << root1;
+		cout << "\n EQUAL ROOTS"<<endl;
+		root1 = -coefficient_b / denominator;
+		cout << "\n ROOT1 = " << root1<<endl;
 	}
+	
 	else
 	{
-		cout << "\n IMAGINARY ROOTS";
+		cout << " IMAGINARY ROOTS" << endl;
+		
 	}
+	
 	return 0;
 }
