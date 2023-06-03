@@ -1,30 +1,18 @@
-//Write a program to determine the character entered by the user.
+// Program to find whether given year is a leap year or not
+
 using namespace std;
-#include<iostream>
-#include<cctype>
-void main()
+#include <iostream>
+int main()
 {
-	char ch;
-	cout << "\n Press any key: ";
-	cin >> ch;
-	if (isalpha(ch) > 0)
+	int year;
+	cout << "Enter any year: \n";
+	cin >> year;
+	if ((year % 4 == 0 && year % 100 == 0))
 	{
-		cout << "\n The user has entered a character\n";
+		cout << "\n ed ees wad ed ees, a leep eyar";
 	}
-	else if (isdigit(ch) > 0)
+	else
 	{
-		cout << "\n The user has entered a number!\n";
-	}
-	else if (isprint(ch) > 0)
-	{
-		cout << "\n The user has entered a printable character!\n";
-	}
-	else if (isspace(ch) > 0)
-	{
-		cout << "\n The user has entered a whitespace character!\n";
-	}a
-	else if (ispunct(ch) > 0)
-	{
-		cout << "\n The user has entered a punctuation character!\n";aa
+		cout << "\n ed ess nad ad ed ess, not a leep eyar";
 	}
 }
