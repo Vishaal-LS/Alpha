@@ -1,43 +1,41 @@
-// 3.9 Program to calculate tax
-// if income<1,50,000, then no tax
-//if income 150,001-300000, then 10% tax
-//if income 300,001-500,000, then 20% tax
-//if income>500,001, then 30% tax
+// Program to enter marks of students in 4 subject
 
 #include<iostream>
-#define MIN1 150001
-#define MAX1 300000
-#define RATE1 0.10
-#define MIN2 300001
-#define MAX2 50000
-#define RATE2 0.20
-#define MIN3 500001
-#define RATE3 0.30
-
 using namespace std;
 
-void main()
+int main()
 {
-	double income, taxable_income, tax;
-	cout << "\n Enter the income : ";
-	cin >> income;
-	taxable_income = income - 150000;
-	if (taxable_income <= 0)
-	{
-		cout << "\n No Tax!";
-	}
-	else if (taxable_income >= MIN1 && taxable_income < MAX1)
-	{
-		tax = (taxable_income - MIN1) * RATE1;
-	}
-	else if (taxable_income >= MIN2 && taxable_income < MAX2)
-	{
-		tax = (taxable_income - MIN2 * RATE2);
-	}
-	else
-	{
-		tax = (taxable_income - MIN3) * RATE3;
-	}
+    int marks1, marks2, marks3, marks4, total = 0;
+    float avg = 0.0;
+    
+    cout << "Enter the marks in Mathematics, Science, Social Science, and Computers: ";
+    cin >> marks1 >> marks2 >> marks3 >> marks4;
+    
+    total = marks1 + marks2 + marks3 + marks4;
+    avg = static_cast<float>(total) / 4;
+    
+    cout << "Total: " << total << ", Average: " << avg << endl;
+    
+    if (avg >= 75)
+    {
+        cout << "Distinction" << endl;
+    }
+    else if (avg >= 60)
+    {
+        cout << "First Division" << endl;
+    }
+    else if (avg >= 50)
+    {
+        cout << "Second Division" << endl;
+    }
+    else if (avg >= 40)
+    {
+        cout << "Third Division" << endl;
+    }
+    else
+    {
+        cout << "FAIL" << endl;
+    }
 
-	cout << "\n TAX = " << tax;
+    return 0;
 }
