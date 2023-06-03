@@ -1,40 +1,31 @@
-// Program 3.13 Write coefficient_a program to calculate roots of coefficient_a quadratic equation.
+//w3schools_switchcase_num-day
 #include<iostream>
-#include<cmath>
-
 using namespace std;
 
 int main()
 {
-	float coefficient_a, coefficient_b, coefficient_c, realpart, imaginarypart;
-	float Discriminant, denominator, root1, root2;
 
-	cout << "\n Enter the values of coefficient_a, coefficient_b, coefficient_c : " << endl;
-	cin >> coefficient_a >> coefficient_b >> coefficient_c;
-	
-	Discriminant = pow(coefficient_b, 2) - (4 * coefficient_a * coefficient_c);
-	denominator = 2 * coefficient_a;
-	
-	if (Discriminant > 0)
-	{
-		cout << "REAL ROOTS"<<endl;
-		root1 = (-coefficient_b + sqrt(Discriminant)) / denominator;
-		root2 = (-coefficient_b - sqrt(Discriminant)) / denominator;
-		cout << "\n ROOT1 = " << root1 << "\t ROOT2 = " << root2 << endl;
-	}
+	int day;
 
-	else if (Discriminant == 0)
+	cout << "Enter the number to check day : ";
+	cin >> day;
+
+	switch (day)
 	{
-		cout << "\n EQUAL ROOTS"<<endl;
-		root1 = -coefficient_b / denominator;
-		cout << "\n ROOT1 = " << root1<<endl;
-	}
-	
-	else
-	{
-		cout << " IMAGINARY ROOTS" << endl;
-		
-	}
-	
+	case 1: cout << "Monday";
+		break;
+	case 2: cout << "Tuesday";
+		break;
+	case 3: cout << "Wednesday";
+		break;
+	case 4: cout << "Thursday";
+		break;
+	case 5: cout << "Friday";
+		break;
+	case 6: cout << "Saturday";
+		break;
+	case 7: cout << "Sunday";
+		break;
+	} 
 	return 0;
 }
