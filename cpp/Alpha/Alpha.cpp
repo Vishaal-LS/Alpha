@@ -1,31 +1,11 @@
-//w3schools_switchcase_num-day
-#include<iostream>
+#include <iostream>
+#include <string>
+
 using namespace std;
 
 int main()
 {
-
-	int day;
-
-	cout << "Enter the number to check day : ";
-	cin >> day;
-
-	switch (day)
-	{
-	case 1: cout << "Monday";
-		break;
-	case 2: cout << "Tuesday";
-		break;
-	case 3: cout << "Wednesday";
-		break;
-	case 4: cout << "Thursday";
-		break;
-	case 5: cout << "Friday";
-		break;
-	case 6: cout << "Saturday";
-		break;
-	case 7: cout << "Sunday";
-		break;
-	} 
-	return 0;
+	int num1, num2;
+	cout << "Enter the first number and second number: ";
+	cin >> num1 >> num2;
 }
