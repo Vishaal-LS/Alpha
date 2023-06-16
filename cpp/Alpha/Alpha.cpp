@@ -1,47 +1,90 @@
-// prorgam to find largest of n numbers using arrays
+// Program to interchange large and small number in array
 
-#include <iostream>
-#include<stdlib.h>
-
+#include<iostream>
 
 int main()
 {
-	int arr[50], i, large, n;
-	
-	std::cout << "Enter the number of elements in the array :- \n";
-	std::cin >> n;
-	
-	std::cout << "Enter the elements of Array : \n";
+    int i, n, arr[20], temp;
+    int small, small_pos = 0, large, large_pos = 0;
 
-	for (i = 0; i < n; i++)
-	{
-		std::cin >> arr[i];
-	}
-	large = arr[0];
-	for (i = 1; i < n; i++)
-	{
-		if (arr[i] > large)
-			large = arr[i]	
-	}
-	std::cout << "\n The Largest number is : " << large;
+    std::cout << "********Program to interchange large and small number in array************\n\n";
+
+    std::cout << "Enter the number of elements in the array: ";
+    std::cin >> n;
+
+    std::cout << "Enter the elements of the array: ";
+    for (i = 0; i < n; i++)
+    {
+        std::cin >> arr[i];
+    }
+
+    small = large = arr[0];
+    for (i = 0; i < n; i++)
+    {
+        if (arr[i] < small)
+        {
+            small = arr[i];
+            small_pos = i;
+        }
+        if (arr[i] > large)
+        {
+            large = arr[i];
+            large_pos = i;
+        }
+    }
+    std::cout << "The smallest number is: " << small << "\n";
+    std::cout << "The position of the smallest number in the array is: " << small_pos + 1 << "\n";
+
+    std::cout << "The largest number is: " << large << "\n";
+    std::cout << "The position of the largest number in the array is: " << large_pos + 1 << "\n";
+
+    temp = arr[large_pos];
+    arr[large_pos] = arr[small_pos];
+    arr[small_pos] = temp;
+
+    std::cout << "\nThe new array is: ";
+    for (i = 0; i < n; i++)
+    {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << "\n\n****************************************************\n";
 }
 
+
+
 /*
-1. Delcare an array "arr" of size 50.
+Pesudocode:
 
-2. Declare variables 'i', 'large', 'n', which represent loop counter, largest number and the number of elements respectively.
+1. Variable Declaration of i , n, arr[20], temp, small, small_pos, large, large_pos.
 
-3. print "Enter the number of elements in the array : ".
+2. print "Enter the number of elements in the array : " and read value of n.
 
-4. read values of 'n' from the user.
+3. print "Enter the elements of the array : ", 
+	a)initiate a forloop where i is 0 and ALA i < n , i gets incremented.
+	b)read value of arr[i]
 
-5. print "Enter the elements of Array : ".
+4. declare small = large = arr[0].
 
-6. start a forloop from 0 to n-1 as long as i is smaller than n, i gets incremented and value of 'i' is read for the array elements.
+5. initiate forloop for i where i =0, and if i is smaller than  n , i gets incremented
+	a) if arr[i] is smaller than "small", small = arr[i] and small_pos = 1.
+	b) if arr[i] is larger than "large", large = arr[i] and large_pos = 1.
+====
+6. print "The smallest number of these numbers is : " 
+	a) "small".
 
-7. set 'large' to first element of array.
+7. print "The position of the smallest number in the array is : ".
+	a) "small_pos".
 
-8. start a forloop from 1 to n-1 as long as i < n, i gets incremented, check if 'arr[i]' is greater than 'large', assign large to arr[i].
+8. print "The largest of these numbers is : " 
+	a) "large"
 
-9. Print "The largest number is : " into largest number.
+9. print "The position of the largest number in the array is : "
+	a) large_pos
+======
+10. assign temp to arr[large_pos] and make arr[large_pos] = arr[small_pos] and assign arr[small_pos] to temp
+
+11. print "The new array is : "
+	a)forloop where i = 0 and as long as i is less than n, i is incremented.
+	b)print arr[i]
+
 */
