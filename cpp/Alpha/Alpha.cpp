@@ -1,33 +1,16 @@
-
+//program to add two floating point numbers 
 #include <iostream>
-#include <sstream>
-#include <vector>
-
-using namespace std;
 
 int main()
 {
-    string line = "Sail*Boats*Are*Awesome";
-    
-    void token_str();
-    {
-        vector<string> tokens;
-        istringstream iss(line);
-        string intermediate;
-        // Tokenizing w.r.t. delimiter '*'
-        while (getline(iss, intermediate, '*'))
-        {
-            tokens.push_back(intermediate);
-        }
+	using namespace std;
 
-        for (const auto& token : tokens)
-        {
-            cout << "\n" << token << '\n';
-        }
+	float num1, num2, sum = 0.0;
+	float* pnum1 = &num1, * pnum2 = &num2, * psum = &sum;
+	cout << "\n Enter the two numbers : ";
+	cin >> * pnum1 >> * pnum2;
 
-        return 0;
-    }
-
-
-
+	*psum = *pnum1 + *pnum2;
+	  
+	cout << "\n" << *pnum1 << " + " << *pnum2 << " = " << *psum;
 }
