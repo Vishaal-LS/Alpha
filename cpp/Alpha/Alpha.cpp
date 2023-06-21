@@ -1,26 +1,22 @@
-// Program to combine string and integer using classes
+// Program for multiple objects of class
+
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-class MyClass
-	
+class myclass
 {
-
 public:
-	int mynum;
-	string mystring;
+	void mymethod()
+	{
+		cout << "this is MY method!";
+	}
 };
 
 int main()
 {
-	MyClass myobj;
-
-	myobj.mynum = 15;
-	myobj.mystring = " is the number of guns i own";
-
-	cout << myobj.mynum << myobj.mystring << "\n";
-	return 0;		
+	myclass myobj;
+	myobj.mymethod();
+	return 0;
 }
-
