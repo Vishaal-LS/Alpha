@@ -1,22 +1,30 @@
-// Program for multiple objects of class
-
+// Program to check 
 #include <iostream>
-#include <string>
-
 using namespace std;
 
-class myclass
+bool isPrime(int num)
 {
-public:
-	void mymethod()
+	for (int i = 2; i < sqrt(num); i++)
 	{
-		cout << "this is MY method!";
+		if (num % i == 0)
+		{
+			return false;
+		}
 	}
-};
+	return true;
+}
 
 int main()
 {
-	myclass myobj;
-	myobj.mymethod();
-	return 0;
-}
+	int a, b;
+	cout << " ENter values of A and B :";
+	cin >> a >> b;
+
+	for (int i = a; i <= b; i++)
+	{
+		if (isPrime(i) == true)
+		{
+			cout << i << "\n";
+		}
+	}
+ }
