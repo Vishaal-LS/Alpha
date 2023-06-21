@@ -1,20 +1,26 @@
-// Recursive program
+// Program to combine string and integer using classes
 #include <iostream>
+#include <string>
 
-void myFunction(int myNumbers[5])
+using namespace std;
 
-{
-	using namespace std;
+class MyClass
 	
-	for (int i = 0; i < 5; i++) 
-	{
-		cout << myNumbers[i] << "\n";
-	}
-}
+{
+
+public:
+	int mynum;
+	string mystring;
+};
 
 int main()
 {
-	int myNumbers[5] = { 10, 20, 30, 40, 50 };
-	myFunction(myNumbers);
-	return 0;
+	MyClass myobj;
+
+	myobj.mynum = 15;
+	myobj.mystring = " is the number of guns i own";
+
+	cout << myobj.mynum << myobj.mystring << "\n";
+	return 0;		
 }
+
